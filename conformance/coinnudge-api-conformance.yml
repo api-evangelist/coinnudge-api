@@ -1,0 +1,32 @@
+generated: '2026-09-13'
+method: derived
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API Conformance
+description: >-
+  Cross-cutting standards assertions for the CoinNudge Data API, derived from the
+  documented behavior. This is a read-only crypto market-data API with no
+  regulated-domain standard in play (the operator explicitly claims no financial
+  license or registration).
+conformance:
+  - id: offset-pagination
+    conforms: true
+    evidence: >-
+      Documented limit/offset params with has_more, next_offset, total response
+      fields (https://coinnudge.site/data/api-docs).
+  - id: rfc9457
+    conforms: false
+    evidence: >-
+      Errors use a FastAPI-style {"detail": "..."} JSON envelope, not
+      application/problem+json (confirmed on live 401 responses).
+  - id: oauth2
+    conforms: false
+    evidence: Authentication is a static Bearer API key (cnd_ prefix); no OAuth2 flow.
+  - id: idempotency
+    conforms: false
+    evidence: Read-only GET surface; no Idempotency-Key mechanism documented.
+domain_standard:
+  present: false
+  note: >-
+    Crypto market-data delivery has no adopted machine-readable domain standard
+    (no OpenRTB/FHIR/SCIM/ISO-20022 analogue applies). Reward-only field left
+    empty; nothing invented.

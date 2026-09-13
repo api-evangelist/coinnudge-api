@@ -39,11 +39,48 @@ apis:
         url: https://coinnudge.site/data/api-docs
       - type: LLMsTxt
         url: https://coinnudge.site/llms.txt
+      - type: Authentication
+        url: authentication/coinnudge-api-authentication.yml
+      - type: Conventions
+        url: conventions/coinnudge-api-conventions.yml
+      - type: ErrorCatalog
+        url: errors/coinnudge-api-problem-types.yml
+      - type: RateLimits
+        url: rate-limits/coinnudge-api-rate-limits.yml
+      - type: Lifecycle
+        url: lifecycle/coinnudge-api-lifecycle.yml
+      - type: DataModel
+        url: data-model/coinnudge-api-data-model.yml
+      - type: MCPServer
+        url: mcp/coinnudge-api-mcp.yml
 maintainers:
   - FN: LUMOS AI TECHNOLOGY CO LTD
     url: https://coinnudge.site/
+    email: samqikaka625@gmail.com
 generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 90
   at: '2026-09-13T10:03:52.918Z'
+common:
+- type: Website
+  url: https://coinnudge.site/
+- type: DomainSecurity
+  url: security/coinnudge-api-domain-security.yml
+- type: Plans
+  url: plans/coinnudge-api-plans-pricing.yml
+- type: Conformance
+  url: conformance/coinnudge-api-conformance.yml
+- type: Pricing
+  url: https://coinnudge.site/pricing
+- type: TermsOfService
+  url: https://coinnudge.site/terms
+- type: PrivacyPolicy
+  url: https://coinnudge.site/privacy
+- type: Support
+  url: https://coinnudge.site/about
+x-enrichment:
+  date: '2026-09-13'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3

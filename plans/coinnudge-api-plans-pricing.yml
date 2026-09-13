@@ -1,0 +1,64 @@
+generated: '2026-09-13'
+method: searched
+source: https://coinnudge.site/pricing
+name: CoinNudge Plans & Pricing
+description: >-
+  CoinNudge sells two separate product lines: personal Telegram alert plans and
+  professional research-data plans. All paid plans are one-time, fixed-term
+  purchases paid in USDT with no automatic renewal. The API (this repo's subject)
+  is entitled by the professional data plans.
+plan_count: 5
+payment:
+  method: one-time USDT (BEP-20 on BNB Smart Chain, SPL on Solana, TRC20 on TRON)
+  auto_renewal: false
+plans:
+  - name: Free Account
+    line: personal-alerts
+    price: 0
+    currency: USD
+    period: ongoing
+    included: BTC and ETH price-move alerts plus verified Binance listing announcements; two ready-made alert categories
+  - name: Pro Alerts
+    line: personal-alerts
+    price: 8.99
+    currency: USD (paid in USDT)
+    period: 30 days (non-renewing)
+    included: >-
+      Nine event-driven alert categories, 12 default coins (BTC, ETH + 10
+      platform-managed coins), up to 10 personal coins, daily Telegram briefing
+  - name: Data Researcher
+    line: professional-data
+    price: 99
+    currency: USD (paid in USDT)
+    period: 30 days (non-renewing)
+    api_keys: 1
+    rate_limit: 60 requests/minute
+    data_transfer: 1 GiB/day
+    formats: [json, csv, parquet]
+    coverage: >-
+      Market Events v1 only, for BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT,
+      DOGEUSDT on Binance Spot (published history only)
+  - name: Data Research Desk
+    line: professional-data
+    price: 399
+    currency: USD (paid in USDT)
+    period: 30 days (non-renewing)
+    api_keys: 5
+    rate_limit: 300 requests/minute (shared across account)
+    data_transfer: 5 GiB/day
+    formats: [csv, parquet]
+    coverage: Market Events v1 (six Binance spot markets); team research permitted
+  - name: Institutional & Custom
+    line: professional-data
+    price: 1500
+    price_note: institutional starts at $1,500+; one-time custom extracts from $500+
+    currency: USD (paid in USDT)
+    period: quote-based, scope-dependent
+    included: >-
+      History window, delivery controls, permitted use, support and service
+      commitments scoped before payment. Derivatives, flow, listings and other
+      historical coverage require scope/date/field/source-use confirmation.
+notes: >-
+  Professional data access and the $8.99 personal Telegram plan are separate
+  products. No SLA or status page is published. No profit promise, no trade
+  execution, no automatic renewal.

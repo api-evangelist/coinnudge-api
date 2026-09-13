@@ -1,0 +1,46 @@
+generated: '2026-09-13'
+method: derived
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API MCP (candidate)
+status: candidate
+description: >-
+  No official hosted or local MCP server was found for CoinNudge (no /mcp
+  endpoint, no npm/PyPI package, no mention in docs or llms.txt). This is a
+  DERIVED candidate tool list mapped from the documented REST operations so an
+  MCP server could be built; nobody ships one today.
+deployment:
+  mode: none
+  endpoint: ''
+  install: ''
+  package: ''
+  auth: api-key
+  verified: derived
+candidate_tools:
+  - name: list_research_datasets
+    rest: GET /research/catalog
+    description: List the free Research datasets available to the account.
+  - name: get_research_dataset
+    rest: GET /research/{DATASET_ID}
+    description: Fetch one derived market dataset as JSON.
+  - name: get_research_dataset_csv
+    rest: GET /research/{DATASET_ID}/csv
+    description: Fetch one derived market dataset as CSV.
+  - name: get_market_events_catalog
+    rest: GET /catalog
+    description: Get Market Events v1 product metadata.
+  - name: get_market_events_schema
+    rest: GET /schema
+    description: Get the Market Events row schema.
+  - name: list_releases
+    rest: GET /releases
+    description: List recent immutable daily release IDs (limit 1-100).
+  - name: get_release_rows
+    rest: GET /rows/{RELEASE_ID}
+    params: [symbol, sample_type, limit, offset]
+    description: Query event/control rows within a release.
+  - name: download_release
+    rest: GET /download/{RELEASE_ID}/{FORMAT}
+    description: Download a release as csv, parquet, json, manifest, or schema.
+note: >-
+  DERIVED ONLY - no endpoint URL is asserted. Auth would be the account's cnd_
+  Bearer key. All operations are read-only.

@@ -1,0 +1,66 @@
+generated: '2026-09-13'
+method: searched
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API Conventions
+description: >-
+  Cross-cutting runtime semantics for the CoinNudge Data API, derived from the
+  published API documentation. The API is a read-only (GET-only) data-delivery
+  surface over immutable daily releases; it is not a live exchange stream and
+  exposes no write operations.
+auth_style:
+  scheme: http bearer
+  header: 'Authorization: Bearer <cnd_ key>'
+  ref: ../authentication/coinnudge-api-authentication.yml
+versioning:
+  style: path
+  current: v1
+  base_path: /api/data/v1
+  notes: >-
+    The Market Events data product is itself versioned (Market Events v1) and
+    carries calculation identifiers such as "event-study-six-spot-1.2". API
+    queries read a selected immutable daily release; revisions receive a NEW
+    release ID rather than mutating an existing one.
+pagination:
+  style: offset
+  params:
+    limit: 1-500 rows, default 100 (paid rows endpoint); releases limit 1-100
+    offset: 0-100000, default 0
+  response_fields:
+    - has_more (boolean)
+    - next_offset (integer)
+    - total (record count)
+  notes: Maintain the same release ID across all paginated requests.
+error_envelope:
+  format: non-rfc9457
+  shape: '{"detail": "<message>"}'
+  content_type: application/json
+  notes: >-
+    FastAPI-style single-field envelope. Not application/problem+json; no type,
+    title, or instance members. See ../errors/coinnudge-api-problem-types.yml.
+rate_limit_signaling:
+  documented_limits: true
+  ref: ../rate-limits/coinnudge-api-rate-limits.yml
+  exhaustion_status: 429 (rate limit or daily quota exceeded)
+  notes: >-
+    Published response headers for rate-limit state were not documented and could
+    not be observed (all endpoints 401 without a key). Clients are told to respect
+    each dataset's declared refresh_seconds interval rather than polling.
+data_refresh:
+  field: refresh_seconds (per-dataset)
+  cadence: recent partitions checked hourly; releases are immutable daily snapshots
+response_formats:
+  - json
+  - csv
+  - parquet (bulk download only)
+idempotency:
+  coverage: na
+  note: >-
+    The API exposes only GET (read) operations over immutable releases; there is
+    no mutating surface, so replay-protection / Idempotency-Key semantics do not
+    apply.
+reversibility:
+  applicable: na
+  note: >-
+    Read-only data API with no write, create, or state-changing operations, so
+    there is nothing to reverse. Purchases are handled off-API (one-time USDT
+    payment, no auto-renewal) and are out of scope for the data contract.

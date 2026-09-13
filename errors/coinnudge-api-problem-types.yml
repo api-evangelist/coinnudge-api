@@ -1,0 +1,50 @@
+generated: '2026-09-13'
+method: searched
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API Error Catalog
+description: >-
+  HTTP status codes and error semantics for the CoinNudge Data API, derived from
+  the published documentation and confirmed against live 401 responses. Errors
+  are returned as a FastAPI-style JSON envelope, not RFC 9457 problem+json.
+format: non-rfc9457
+envelope:
+  content_type: application/json
+  shape: '{"detail": "<human-readable message>"}'
+problem_types:
+  - status: 401
+    title: Unauthorized
+    meaning: Invalid, missing, or revoked API key.
+    remediation: >-
+      Present a valid customer data Bearer key (cnd_ prefix) issued from the
+      workspace. Observed live detail example, "Use a customer data Bearer key,
+      not an internal audit token."
+  - status: 403
+    title: Forbidden
+    meaning: Paid endpoint accessed without an active plan or with insufficient allowance.
+    remediation: Purchase or renew a plan covering the requested data family/scope.
+  - status: 404
+    title: Not Found
+    meaning: Unknown release ID or unavailable file.
+    remediation: List /releases to obtain a valid RELEASE_ID; confirm the format exists.
+  - status: 409
+    title: Conflict
+    meaning: All API key slots for the account are exhausted.
+    remediation: Revoke an existing key or upgrade to a plan with more key slots.
+  - status: 413
+    title: Payload Too Large
+    meaning: Oversized query.
+    remediation: Narrow the query window, reduce limit, or use bulk Parquet/CSV download.
+  - status: 422
+    title: Unprocessable Entity
+    meaning: Invalid parameter values.
+    remediation: >-
+      Correct symbol (BTCUSDT/ETHUSDT/SOLUSDT/BNBUSDT/XRPUSDT/DOGEUSDT),
+      sample_type (event|control), limit (1-500), or offset (0-100000).
+  - status: 429
+    title: Too Many Requests
+    meaning: Rate limit or daily data-transfer quota exceeded.
+    remediation: Back off to the plan's per-minute limit; respect dataset refresh_seconds.
+  - status: 503
+    title: Service Unavailable
+    meaning: Service temporarily unavailable.
+    remediation: Retry with backoff.

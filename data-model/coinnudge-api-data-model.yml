@@ -1,0 +1,74 @@
+generated: '2026-09-13'
+method: derived
+source: >-
+  https://coinnudge.site/data/api-docs and https://coinnudge.site/data/samples
+  (no OpenAPI/JSON Schema published; entities derived from documented endpoints
+  and the Market Events sample)
+name: CoinNudge Data API Data Model
+description: >-
+  Entity graph derived from the documented CoinNudge Data API surface. Two data
+  families: free Research datasets (derived market snapshots and scheduled
+  studies) and the paid Market Events v1 product (versioned event/control study
+  rows for six Binance spot pairs). No machine-readable schema is published; the
+  paid /schema endpoint that would carry it is auth-gated.
+entities:
+  - name: ResearchCatalog
+    endpoint: GET /research/catalog
+    description: Index of the ~55 free Research datasets available to a keyed account.
+  - name: ResearchDataset
+    endpoint: GET /research/{DATASET_ID} (json) and /research/{DATASET_ID}/csv (csv)
+    fields:
+      - refresh_seconds (declared per-dataset refresh interval)
+    description: A single derived market dataset (breadth, dominance, funding/OI, liquidations, volatility, listings, etc.).
+  - name: MarketEventsCatalog
+    endpoint: GET /catalog
+    description: Metadata for the paid Market Events v1 product.
+  - name: MarketEventsSchema
+    endpoint: GET /schema
+    description: Field/type schema for Market Events rows (auth-gated; not observable anonymously).
+  - name: Release
+    endpoint: GET /releases?limit=30
+    fields:
+      - release_id
+      - build_timestamp
+      - daily_release_count
+      - calculation_id (e.g. event-study-six-spot-1.2)
+    description: An immutable daily snapshot of the Market Events dataset; revisions get a new release_id.
+  - name: Row
+    endpoint: GET /rows/{RELEASE_ID}
+    query_params: [symbol, sample_type, limit, offset]
+    fields:
+      - market (trading pair symbol, e.g. XRPUSDT)
+      - observation_utc (event timestamp)
+      - type_trigger (classification and cause; event or control)
+      - feature_availability (e.g. "locally_known"; missing outcomes marked "pending"/"gap", never zero-filled)
+      - forward_return_1h_status (1h price return metric and outcome state)
+      - sample_type (event | control)
+    description: >-
+      One observation within a release. "event" rows are recorded public rule
+      triggers (e.g. Bollinger Bands, EMA crossovers); "control" rows are
+      scheduled hourly observations. Retrospective features must not be treated
+      as known at event time.
+  - name: Download
+    endpoint: GET /download/{RELEASE_ID}/{FORMAT}
+    formats: [csv, parquet, json, manifest, schema]
+    description: Bulk/file delivery of a release, including manifest and checksums.
+relationships:
+  - from: ResearchCatalog
+    to: ResearchDataset
+    type: has_many
+  - from: MarketEventsCatalog
+    to: Release
+    type: has_many
+  - from: Release
+    to: Row
+    type: has_many
+    via: release_id
+  - from: Release
+    to: Download
+    type: has_many
+    via: release_id
+  - from: Release
+    to: MarketEventsSchema
+    type: has_one
+symbols_covered: [BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT, DOGEUSDT]

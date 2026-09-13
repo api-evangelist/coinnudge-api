@@ -1,0 +1,38 @@
+generated: '2026-09-13'
+method: searched
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API Lifecycle
+description: >-
+  Versioning, release, and revision semantics for the CoinNudge Data API, derived
+  from the API documentation and the published research standards. The provider
+  publishes no status page, no SLA, and no formal deprecation/sunset policy.
+versioning:
+  api_version: v1
+  scheme: path (/api/data/v1)
+  product_versioning: >-
+    Data products are independently versioned (Market Events v1); calculation
+    identifiers such as "event-study-six-spot-1.2" pin the methodology used.
+release_model:
+  immutability: >-
+    Each customer API query reads a selected immutable daily release. Data is a
+    point-in-time snapshot, not a live exchange stream.
+  revisions: >-
+    Recent partitions are re-checked hourly; a revision produces a NEW release ID
+    rather than mutating an existing release. JSON, CSV and Parquet downloads all
+    reference the same published releases.
+  release_discovery: GET /releases?limit=30 lists recent release IDs (1-100).
+corrections_policy:
+  source: https://coinnudge.site/research/standards
+  statement: >-
+    "Material corrections update the page date and affected claim where
+    practical." Corrections are dated rather than versioned into a formal
+    changelog; public factual claims must be traceable to code, primary
+    documentation, or a dated report.
+status_page:
+  present: false
+sla:
+  present: false
+  note: Service commitments are scoped per-contract only for institutional/custom deals.
+deprecation_policy:
+  present: false
+  sunset_headers: unknown (RFC 8594 not documented; endpoints not observable without a key)

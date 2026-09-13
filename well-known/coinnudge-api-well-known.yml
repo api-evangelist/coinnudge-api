@@ -1,0 +1,36 @@
+generated: '2026-09-13'
+method: probed
+source: live probes of /.well-known/* on every known host
+name: CoinNudge Well-Known Documents
+description: >-
+  Probe log for standard /.well-known/ discovery documents. Every path returned
+  404 on the one host this record knows (coinnudge.site is the site root, the API
+  base host, the docs host, and the only OpenAPI-less surface). No pointer is
+  emitted because nothing served a real document.
+hosts:
+  - host: coinnudge.site
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+note: >-
+  All paths 404 (each returns the site's HTML 404 shell). No WellKnown or
+  SecurityTxt pointer is added to apis.yml - this is a recorded absence.

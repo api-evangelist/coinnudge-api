@@ -1,0 +1,35 @@
+generated: '2026-09-13'
+method: searched
+source: https://coinnudge.site/data/api-docs
+name: CoinNudge Data API Rate Limits
+description: >-
+  Published request-rate and daily data-transfer limits for the CoinNudge Data
+  API, by plan. Runtime rate-limit response headers are not documented and could
+  not be observed on live requests (all endpoints return 401 without a key).
+limit_count: 3
+exhaustion_status: 429
+response_headers:
+  documented: false
+  note: >-
+    No X-RateLimit-* / RateLimit-* / Retry-After headers are documented; they
+    could not be observed because every endpoint requires an authenticated key.
+limits:
+  - scope: per-account
+    plan: Free
+    requests_per_minute: 60
+    daily_data_transfer: null
+    api_keys: 1
+  - scope: per-account
+    plan: Researcher
+    requests_per_minute: 60
+    daily_data_transfer: 1 GiB/day
+    api_keys: 1
+  - scope: per-account
+    plan: Research Desk
+    requests_per_minute: 300
+    daily_data_transfer: 5 GiB/day
+    api_keys: 5 (limit shared across the account)
+notes: >-
+  On exhaustion the API returns 429 (rate limit or daily quota exceeded).
+  Oversized single queries may return 413. Clients should respect each dataset's
+  declared refresh_seconds rather than polling continuously.

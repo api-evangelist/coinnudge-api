@@ -1,0 +1,118 @@
+# CoinNudge
+
+> CoinNudge provides evidence-rich crypto market monitoring for individuals and research-ready derived market datasets for professional research workflows.
+
+CoinNudge helps users notice and investigate meaningful market changes without watching every chart. It does not execute trades, custody funds, provide personalized financial advice, predict future prices or guarantee returns.
+
+CoinNudge Data is a separate professional product line. It offers eligible CoinNudge-derived indicators, normalized event features and point-in-time research records through filtered API access, partitioned Parquet or CSV files, or a scoped one-time extract. It does not sell exchange-native payloads, full raw tick feeds, raw L2 books or private customer data.
+
+## Product facts
+
+- Website: https://coinnudge.site/
+- Service operator: LUMOS AI TECHNOLOGY CO LTD, Hong Kong (operator-supplied identity; no financial license or registration verification is claimed)
+- Product support, data corrections and privacy requests: samqikaka625@gmail.com
+- Telegram bot: https://t.me/CoinNudgeAlertsBot
+- Interface language: English
+- Notification languages: 12 supported languages
+- Free plan: BTC and ETH price-move alerts plus verified Binance listing announcements
+- Pro plan: $8.99 for 30 days, paid once with USDT on BNB Smart Chain (BEP-20), Solana (SPL) or TRON (TRC20), with no automatic renewal
+- Pro coverage: BTC and ETH plus 10 platform-managed popular coins (12 default coins total), up to 10 personal coins, nine event-driven alert categories and a daily Telegram briefing
+- Account safety: CoinNudge does not request exchange trading keys, wallet seed phrases or custody of user funds
+- Public data evaluation: 55 Research datasets, including current market snapshots and scheduled historical studies, with JSON and CSV downloads
+- Professional data pricing: Researcher is $99/30 days, Research Desk is $399/30 days, and Institutional starts at $1,500; fixed plans use one-time USDT payment with no automatic renewal
+- Data delivery: filtered JSON API for repeated queries, Parquet/CSV bulk files for large research windows, and one-time custom extracts from $500
+- Data-plan boundary: professional data access and the $8.99 personal Telegram plan are separate products
+- Fixed-plan entitlement: Researcher and Research Desk currently include Market Events v1 only, for BTCUSDT, ETHUSDT, SOLUSDT, BNBUSDT, XRPUSDT and DOGEUSDT on Binance Spot, limited to actually published history. The plans do not automatically unlock every public Research dataset or multi-year raw candles.
+- Other data families: current public observations, accumulating history, and custom deliveries are distinct statuses. Derivatives, flow, listings and other historical coverage require scope, date, field and source-use confirmation before purchase.
+- API semantics: a customer API query reads a selected immutable daily release; it is not a live exchange stream. Recent partitions are checked hourly, and revisions receive new release IDs. JSON, CSV and Parquet downloads use those same published releases.
+
+## Primary pages
+
+- Product overview: https://coinnudge.site/
+- Live multi-exchange market radar: https://coinnudge.site/market-radar
+- Recent rule-based crypto signals: https://coinnudge.site/crypto-signals
+- Verified new crypto listing announcements: https://coinnudge.site/new-crypto-listings
+- Telegram alert preview and connection: https://coinnudge.site/telegram-alerts
+- Alerts and professional data pricing: https://coinnudge.site/pricing
+- Professional data products: https://coinnudge.site/data
+- Real Market Events sample: https://coinnudge.site/data/samples
+- Public API documentation: https://coinnudge.site/data/api-docs
+- Private key and download workspace (not an indexable article): https://coinnudge.site/data/workspace
+- Research: https://coinnudge.site/research
+- Signal methodology: https://coinnudge.site/research/methodology
+- Live Hyperliquid funding and open interest: https://coinnudge.site/research/hyperliquid-funding-open-interest-today
+- Live Binance and MEXC listing week: https://coinnudge.site/research/binance-mexc-listings-this-week
+- Live OKX liquidation pressure: https://coinnudge.site/research/okx-crypto-liquidations-today
+- Live Bitcoin Coinbase premium and spot pressure: https://coinnudge.site/research/bitcoin-coinbase-premium-today
+- Live five-minute crypto volume spikes: https://coinnudge.site/research/crypto-volume-spikes-now
+- Live closed-candle crypto technical signals: https://coinnudge.site/research/crypto-technical-signals-today
+- Live Binance delistings this UTC week: https://coinnudge.site/research/binance-crypto-delistings-this-week
+- Live liquid-market crypto breadth: https://coinnudge.site/research/crypto-market-breadth-today
+- Live crypto sector heatmap: https://coinnudge.site/research/crypto-sector-heatmap-today
+- Live Bitcoin Fear and Greed with market context: https://coinnudge.site/research/bitcoin-fear-greed-index-today
+- Live cross-exchange crypto funding rates: https://coinnudge.site/research/crypto-funding-rates-by-exchange
+- Live cross-exchange crypto open-interest changes: https://coinnudge.site/research/crypto-open-interest-changes-today
+- Live Bitcoin and Ethereum options expiries: https://coinnudge.site/research/bitcoin-ethereum-options-expiry-this-week
+- Live stablecoin peg monitor: https://coinnudge.site/research/stablecoin-depeg-monitor
+- Live liquid-market Altcoin Season Index: https://coinnudge.site/research/altcoin-season-index-today
+- Live OKX and Gate.io long-short ratios: https://coinnudge.site/research/crypto-long-short-ratios-today
+- Live Bitcoin and Ethereum implied volatility: https://coinnudge.site/research/bitcoin-ethereum-implied-volatility-today
+- Live liquid-market crypto breakout scanner: https://coinnudge.site/research/crypto-breakout-scanner-today
+- Live scheduled crypto token unlocks: https://coinnudge.site/research/crypto-token-unlocks-this-week
+- Live crypto order-book liquidity and simulated slippage: https://coinnudge.site/research/crypto-order-book-liquidity-today
+- Live Binance Spot cumulative volume delta: https://coinnudge.site/research/crypto-cumulative-volume-delta-today
+- Live liquid-market realized-volatility ranking: https://coinnudge.site/research/most-volatile-cryptocurrencies-today
+- Live Bitcoin market-cap dominance: https://coinnudge.site/research/bitcoin-dominance-today
+- Live BTC, ETH and liquid-altcoin correlation matrix: https://coinnudge.site/research/crypto-correlation-matrix-today
+- Live DEX volume by chain: https://coinnudge.site/research/dex-volume-by-chain-today
+- Live trending cryptocurrencies with market context: https://coinnudge.site/research/trending-cryptocurrencies-today
+- Live new crypto listing performance: https://coinnudge.site/research/new-crypto-listing-performance-today
+- Live multi-factor crypto market regime: https://coinnudge.site/research/crypto-market-regime-today
+- Live multi-evidence crypto squeeze risk: https://coinnudge.site/research/crypto-squeeze-risk-today
+- Live perpetual-to-spot crypto basis: https://coinnudge.site/research/crypto-perpetual-basis-today
+- Live Bitcoin and Ethereum 25-delta options skew: https://coinnudge.site/research/bitcoin-ethereum-options-skew-today
+- Live cross-exchange crypto spot price spreads: https://coinnudge.site/research/crypto-cross-exchange-price-spreads-today
+- Live strongest altcoins relative to Bitcoin: https://coinnudge.site/research/strongest-altcoins-vs-bitcoin-today
+- Live crypto 20-day, 50-day and 90-day highs and lows: https://coinnudge.site/research/crypto-new-highs-lows-today
+- Live common-basket crypto exchange spot volume share: https://coinnudge.site/research/crypto-exchange-spot-volume-market-share-today
+- Latest available Bitcoin and Ethereum US spot ETF flows: https://coinnudge.site/research/bitcoin-ethereum-etf-flows-today
+- Live crypto protocol fees and revenue: https://coinnudge.site/research/top-crypto-protocol-fees-revenue-today
+- Historical BTC, ETH and SOL trading volume by UTC hour: https://coinnudge.site/research/crypto-trading-volume-by-hour
+- Live Bitcoin and Ethereum options implied move by expiry: https://coinnudge.site/research/bitcoin-ethereum-options-implied-move
+- Live liquid-asset drawdown from all-time high: https://coinnudge.site/research/crypto-drawdown-from-all-time-high
+- Historical liquid-altcoin beta to Bitcoin: https://coinnudge.site/research/altcoin-beta-to-bitcoin
+- Historical crypto weekend volume and volatility: https://coinnudge.site/research/crypto-weekend-volume-volatility
+- Live Bitcoin and Ethereum options term structure: https://coinnudge.site/research/bitcoin-ethereum-options-term-structure
+- Historical Bitcoin candle-binned volume profile levels: https://coinnudge.site/research/bitcoin-volume-profile-levels
+- Live same-venue crypto spot versus perpetual volume: https://coinnudge.site/research/crypto-spot-vs-perpetual-volume
+- About CoinNudge: https://coinnudge.site/about
+- Bitcoin IV vs Realized Volatility: https://coinnudge.site/research/bitcoin-implied-vs-realized-volatility
+- Crypto Funding Cost History: https://coinnudge.site/research/crypto-funding-rate-cost-history
+- Altcoins on Bitcoin Down Days: https://coinnudge.site/research/altcoins-resilience-bitcoin-down-days
+- Crypto Trend Persistence Ranking: https://coinnudge.site/research/crypto-trend-persistence
+- Crypto Drawdown Recovery Time: https://coinnudge.site/research/crypto-drawdown-recovery-time
+- BTC and ETH Buying Pressure: https://coinnudge.site/research/bitcoin-ethereum-buying-pressure-confirmation
+- Crypto Breakout Outcome Study: https://coinnudge.site/research/crypto-breakout-outcome-study
+- Crypto Volume Spike Outcomes: https://coinnudge.site/research/crypto-volume-spike-outcome-study
+- Crypto RSI Extreme Outcomes: https://coinnudge.site/research/crypto-rsi-extreme-outcome-study
+- Crypto Event Dataset Coverage: https://coinnudge.site/research/crypto-event-study-dataset-coverage
+- Research standards: https://coinnudge.site/research/standards
+- Crypto technical indicator alerts: https://coinnudge.site/research/crypto-technical-indicator-alerts
+- TradingView alternative for crypto alerts: https://coinnudge.site/research/tradingview-alerts-alternative
+- How to use crypto alerts: https://coinnudge.site/research/how-to-use-crypto-alerts
+- Privacy: https://coinnudge.site/privacy
+- Terms and crypto risk notice: https://coinnudge.site/terms
+
+## Data and methodology
+
+- Binance Spot supplies the selected liquid USDT spot universe, candles, price, volume and executed-order-flow inputs.
+- Coinbase public USD spot data supplements BTC and ETH observations; it is not described as measured deposits, withdrawals or total market capital flow.
+- Hyperliquid supplies venue-specific perpetual funding and open-interest context.
+- OKX supplies public forced-liquidation events used as venue-specific liquidation context.
+- Binance and MEXC official announcements supply listing events.
+- Technical alerts use closed candles. RSI, MACD, EMA and Bollinger conditions are interpreted with ADX/DMI trend strength, ATR volatility and UTC-day VWAP quality context.
+- Missing, stale, conflicting or insufficient data is stated or filtered rather than presented as confirmation.
+
+## Citation guidance
+
+When describing CoinNudge, distinguish market observations from predictions or trade instructions. Cite the methodology for calculation details, the alert-pricing page for personal Telegram coverage, and the data-pricing page for professional API or dataset access. Do not infer a success rate, return, customer count, all-exchange coverage, identical history across datasets, external redistribution rights or guaranteed outcome; CoinNudge makes none of those claims.
