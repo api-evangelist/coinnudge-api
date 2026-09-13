@@ -1,0 +1,49 @@
+name: CoinNudge API
+description: >-
+  CoinNudge Data provides a REST HTTP API returning JSON/CSV for cryptocurrency market data, including a free Research
+  API with current derived datasets (market breadth, dominance, funding/OI, liquidations, volatility, listings) and a
+  paid Market Events v1 product with versioned event/control study data for major Binance Spot pairs. Operated by LUMOS
+  AI TECHNOLOGY CO LTD.
+url: https://raw.githubusercontent.com/api-evangelist/coinnudge-api/refs/heads/main/apis.yml
+created: '2026-09-13'
+modified: '2026-09-13'
+specificationVersion: '0.21'
+tags:
+  - cryptocurrency
+  - market data
+  - trading
+  - quantitative finance
+  - research
+  - derivatives
+  - financial data
+  - datasets
+apis:
+  - name: CoinNudge Data API
+    description: >-
+      REST HTTP API returning JSON/CSV for crypto market datasets. Includes a free Research scope (no paid key required)
+      and a paid Market Events v1 scope with versioned releases, schema, manifest, and checksums. Bearer API key
+      authentication.
+    humanURL: https://coinnudge.site/data/api-docs
+    baseURL: https://coinnudge.site/api/data/v1
+    tags:
+      - cryptocurrency
+      - market data
+      - trading
+      - quantitative finance
+      - research
+      - derivatives
+      - financial data
+      - datasets
+    properties:
+      - type: Documentation
+        url: https://coinnudge.site/data/api-docs
+      - type: LLMsTxt
+        url: https://coinnudge.site/llms.txt
+maintainers:
+  - FN: LUMOS AI TECHNOLOGY CO LTD
+    url: https://coinnudge.site/
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 90
+  at: '2026-09-13T10:03:52.918Z'
