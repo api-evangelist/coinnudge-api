@@ -9,6 +9,15 @@ created: '2026-09-13'
 modified: '2026-09-13'
 specificationVersion: '0.21'
 tags:
+  - Cryptocurrency
+  - Market Data
+  - Trading
+  - Quantitative Finance
+  - Research
+  - Derivatives
+  - Financial Data
+  - Datasets
+tags_raw:
   - cryptocurrency
   - market data
   - trading
@@ -26,6 +35,15 @@ apis:
     humanURL: https://coinnudge.site/data/api-docs
     baseURL: https://coinnudge.site/api/data/v1
     tags:
+      - Cryptocurrency
+      - Market Data
+      - Trading
+      - Quantitative Finance
+      - Research
+      - Derivatives
+      - Financial Data
+      - Datasets
+    tags_raw:
       - cryptocurrency
       - market data
       - trading
